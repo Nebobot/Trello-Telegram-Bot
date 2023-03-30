@@ -82,7 +82,9 @@ Follow the instructions and get a TOKEN.
 If you do not understand where the parameters you need are located, refer to the picture below.
 
 ### Picture
-< photo goes here lol >
+1. Get API_KEY FROM APP
+2. Get TOKEN FROM USER
+![Picture](https://raw.githubusercontent.com/Nebobot/Trello-Telegram-Bot/main/img/get-api-keys.png)
 
 # Contribution / Issues
 * Any changes are welcome!
