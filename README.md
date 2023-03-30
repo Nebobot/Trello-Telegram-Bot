@@ -1,4 +1,19 @@
-
+<!-- !! - !! - !! - !! - !! - !! - !! - !! - !! - !! - !! - !! - !! - !!
+ * Copyright (C) 2023 Nikita Beloglazov <nnikita.beloglazov@gmail.com>
+ *
+ * This file is part of Nebobot/Trello-Telegram-Bot.
+ *
+ * Nebobot/Trello-Telegram-Bot is free software; you can redistribute it and/or
+ * modify it under the terms of the Mozilla Public License 2.0
+ * published by the Mozilla Foundation.
+ *
+ * Nebobot/Trello-Telegram-Bot is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY.
+ *
+ * You should have received a copy of the Mozilla Public License 2.0
+ * along with Nebobot/Trello-Telegram-Bot.
+ * If not, see https://mozilla.org/en-US/MPL/2.0.
+-->
 [![License: Mozilla Public License 2.0](https://img.shields.io/badge/License-Mozilla%20Public%20License%202.0-blueviolet.svg)](https://mozilla.org/en-US/MPL/2.0)
 [![Linting: pylint](https://img.shields.io/badge/linting-pylint-success)](https://pylint.pycqa.org/en/latest/)
 [![Author: NikitaBeloglazov](https://img.shields.io/badge/author-.%E2%80%A2%C2%B0%E2%97%8F%E2%9D%A4%EF%B8%8F%20NikitaBeloglazov%20Software%20Foundation%20%E2%9D%A4%EF%B8%8F%E2%97%8F%C2%B0%E2%80%A2.-informational)](https://github.com/NikitaBeloglazov)
@@ -24,6 +39,9 @@ If you need English or any other language, write an Issue and I will add support
 
 Writing Issue and Pull Requests is possible in these languages: English, Ukrainian, Russian.
 
+# Look and feel
+![Picture](https://raw.githubusercontent.com/Nebobot/Trello-Telegram-Bot/main/img/screenshot-of-messages.png)
+
 # Install
 Clone the repository to your local disk
 ```shell
@@ -35,7 +53,7 @@ Install modules
 ```shell
 pip3.10 install pprint colorama requests
 ```
-### [!!] Then change configuration files, refer to section # Configuration
+### [!!] Then change configuration files, refer to section [# Configuration](https://github.com/Nebobot/Trello-Telegram-Bot/#configuration)
 
 And then just run it!
 ```shell
@@ -49,11 +67,14 @@ python3.10 trellobot.py
 
 `telegram_api_token = ""` — Telegram API token, received from [BotFather](https://t.me/BotFather)
 
-`actions_api = "https://..."` — The URL that the bot will access to check for events. For help, see the section # Config # Trello API
+`actions_api = "https://..."` — The URL that the bot will access to check for events. For help, see the section [# Trello API](https://github.com/Nebobot/Trello-Telegram-Bot/#trello-api).
 
-`peer_id = 0` — ID of the chat where notifications will be sent. You can get this ID yourself if you have already worked with BotAPI. Otherwise, it is recommended to use third-party Telegram clients that have this functionality. For example, Kotogram. If you do not understand anything at all, write an Issue, I will try to explain to you, if needed
+`peer_id = 0` — ID of the chat where notifications will be sent. You can get this ID yourself if you have already worked with BotAPI. Otherwise, it is recommended to use third-party Telegram clients that have this functionality. For example, Kotogram. If you do not understand anything at all, write an Issue, I will try to explain to you, if needed.
 
 `set_logging = True` — Turns additional logs on and off.
+
+### config.py and template_config.py
+Configuration variables are available for editing in the `config.py` file. If there is no such file, just rename `template_config.py` to `config.py` and start adding your variables.
 
 ### Trello API
 For the bot to work, you need to compose the correct actions_api address. You can make it according to this template:
