@@ -112,6 +112,9 @@ If you do not understand where the parameters you need are located, refer to the
 * If you want to make a change, please make your code readable and describe your changes. Nobody likes lazy Pull Requests, right? :)
 * To speed up the process, write to [maintainer](https://github.com/NikitaBeloglazov)
 
+### Thank you for using!
+### .•°●❤ NikitaBeloglazov Software Foundation ❤●°•.
+
 # Changelog
 
 * 1.0:
