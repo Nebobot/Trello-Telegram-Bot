@@ -116,6 +116,11 @@ If you do not understand where the parameters you need are located, refer to the
 ### .•°●❤ NikitaBeloglazov Software Foundation ❤●°•.
 
 # Changelog
+* 1.1:
+  * Remove logging of extra error messages
+  * Сhange timeout for errors from 15 to 5 seconds
+  * Fix and cut some loops
+  * Shorten some code
 
 * 1.0:
   * Initial version

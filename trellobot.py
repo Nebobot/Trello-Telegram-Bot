@@ -17,6 +17,7 @@
  * If not, see https://mozilla.org/en-US/MPL/2.0.
  *
  * Description: Main program. Regularly checks trello and reports events.
+ * Version: 1.1
 """
 
 import sys
@@ -65,17 +66,13 @@ def say(my_message, peer_id):
 
 result_old = requests.get(actions_api, timeout=60).json()
 while True: # remove position change events
-		try:
-			if "data" in result_old[0]:
-				if "old" in result_old[0]["data"]:
-					if "pos" in result_old[0]["data"]["old"]:
-						del result_old[0]
-					else:
-						break
-				else:
-					break
-		except IndexError:
+	try:
+		if "pos" in result_old[0]["data"]["old"]:
+			del result_old[0]
+		else:
 			break
+	except (IndexError, KeyError):
+		break
 if "old" not in result_old[0]["data"]:
 	result_old[0]["data"]["old"] = {} # if not exists
 # # # # # # # # # # # #
@@ -87,31 +84,19 @@ while True:
 		try:
 			result_new = requests.get(actions_api, timeout=60).json()
 			break
-		except json.decoder.JSONDecodeError:
+		except (json.decoder.JSONDecodeError, requests.exceptions.RequestException):
 			print("=== Catched!")
 			print(traceback.format_exc())
-			with open("failtures.log", "w", encoding="utf-8") as f:
-				f.write(str(traceback.format_exc()))
-			time.sleep(15)
-		except requests.exceptions.RequestException:
-			print("=== Catched!")
-			print(traceback.format_exc())
-			with open("failtures.log", "w", encoding="utf-8") as f:
-				f.write(str(traceback.format_exc()))
-			time.sleep(15)
+			time.sleep(5)
 	# # # # # # # # # #
 	printraw(result_new)
 	while True: # remove position change events
 		try:
-			if "data" in result_new[0]:
-				if "old" in result_new[0]["data"]:
-					if "pos" in result_new[0]["data"]["old"]:
-						del result_new[0]
-					else:
-						break
-				else:
-					break
-		except IndexError:
+			if "pos" in result_new[0]["data"]["old"]:
+				del result_new[0]
+			else:
+				break
+		except (IndexError, KeyError):
 			break
 	# # # # # # # # # #
 	if "old" not in result_new[0]["data"]:
@@ -151,7 +136,7 @@ while True:
 		else:
 			say("❗ Новое событие на Trello.\nНо мне не удалось отобразить изменения.\n\n📃 Дополнительная инфомация была записана в unknown_events.log", peer_id)
 			with open("unknown_events.log", "w", encoding="utf-8") as f:
-				f.write(str(result_new[0]))
+				f.write("\n\n" + str(result_new[0]))
 		# # # # # # # # # # # # # # # # # # # # # # # # # # #
 		# .replace("<", "&lt;").replace(">", "&gt;") FOR AVOID "Bad Request: can't parse entities: Unsupported start tag \"module\" at byte offset 140"
 	result_old = result_new
