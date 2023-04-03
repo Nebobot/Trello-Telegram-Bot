@@ -58,6 +58,7 @@ def say(my_message, peer_id):
 		"chat_id": peer_id,
 		"text": my_message,
 		"parse_mode": "HTML",
+		"disable_web_page_preview": "true",
 		}, timeout=30).text
 	printraw(result)
 	return result
@@ -85,7 +86,7 @@ while True:
 			result_new = requests.get(actions_api, timeout=60).json()
 			break
 		except (json.decoder.JSONDecodeError, requests.exceptions.RequestException):
-			print("=== Catched!")
+			print("=== Exception caught!")
 			print(traceback.format_exc())
 			time.sleep(5)
 	# # # # # # # # # #
