@@ -108,7 +108,9 @@ while True:
 		printraw(result_new)
 		event_data = result_new[0]["data"]
 		# # # # # # # # # # # # # # # # # # # # # # # # # # #
-		if "listBefore" in event_data and "listAfter" in event_data:
+		if "card" not in event_data:
+			pass
+		elif "listBefore" in event_data and "listAfter" in event_data:
 			temp1 = event_data['card']['name'].replace("<", "&lt;").replace(">", "&gt;") # capitalize first letter
 			temp1 = temp1[0].upper() + temp1[1:] # capitalize first letter
 			say(f"""🗄️ <b>{temp1}</b>
