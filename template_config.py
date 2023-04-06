@@ -26,3 +26,4 @@ telegram_api_token = ""
 actions_api = "https://..."
 peer_id = 0 # make sure you change this value, using 0 is not allowed!
 set_logging = True # after a successful launch, it is recommended to set False
+delay = 5

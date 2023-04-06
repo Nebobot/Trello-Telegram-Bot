@@ -35,7 +35,7 @@ from colorama import init, Fore
 init()
 # # # #
 try:
-	from config import telegram_api_token, actions_api, peer_id, set_logging
+	from config import telegram_api_token, actions_api, peer_id, set_logging, delay
 except ModuleNotFoundError:
 	print(traceback.format_exc())
 	print("= = =\nMaybe config.py is missing?")
@@ -79,6 +79,7 @@ if "old" not in result_old[0]["data"]:
 # # # # # # # # # # # #
 
 print("[#] Trello bot started..")
+print("Delay: " + str(delay) + " sec")
 while True:
 	# # # # # # # # # #
 	while True: # make error catching, retry request if error occurs
@@ -143,5 +144,5 @@ while True:
 		# # # # # # # # # # # # # # # # # # # # # # # # # # #
 		# .replace("<", "&lt;").replace(">", "&gt;") FOR AVOID "Bad Request: can't parse entities: Unsupported start tag \"module\" at byte offset 140"
 	result_old = result_new
-	time.sleep(5)
+	time.sleep(delay)
 	
