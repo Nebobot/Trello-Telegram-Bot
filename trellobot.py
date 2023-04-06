@@ -145,4 +145,3 @@ while True:
 		# .replace("<", "&lt;").replace(">", "&gt;") FOR AVOID "Bad Request: can't parse entities: Unsupported start tag \"module\" at byte offset 140"
 	result_old = result_new
 	time.sleep(delay)
-	
