@@ -21,7 +21,8 @@
 """
 
 import sys
-if "".join(sys.version.split(".")[0:2]) != "310":
+#A lexicographic comparison of '310' and '311' gives the correct result in any case.
+if "".join(sys.version.split(".")[0:2]) < "310":
 	print("[FATAL] Python 3.10 is requered!")
 	sys.exit(1)
 # # # #
