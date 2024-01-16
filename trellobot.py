@@ -21,8 +21,8 @@
 """
 
 import sys
-if "".join(sys.version.split(".")[0:2]) != "310":
-	print("[FATAL] Python 3.10 is requered!")
+if sys.version_info < (3, 9):
+	print("[FATAL] Python 3.9 or newer is required!")
 	sys.exit(1)
 # # # #
 import time

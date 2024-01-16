@@ -47,17 +47,16 @@ Clone the repository to your local disk
 ```shell
 git clone https://github.com/Nebobot/Trello-Telegram-Bot
 ```
-### [!!] Use your distribution's package manager to install python 3.10, don't forget to install pip if it's not included
-
-Install modules
+## Install modules
+#### Also please note, Python 3.9 or newer is required.
 ```shell
-pip3.10 install pprint colorama requests
+pip3 install pprint colorama requests
 ```
 ### [!!] Then change configuration files, refer to section [# Configuration](https://github.com/Nebobot/Trello-Telegram-Bot/#configuration)
 
-And then just run it!
+## And then just run it!
 ```shell
-python3.10 trellobot.py
+python3 trellobot.py
 ```
 
 # Configuration
@@ -114,13 +113,3 @@ If you do not understand where the parameters you need are located, refer to the
 
 ### Thank you for using!
 ### .•°●❤ NikitaBeloglazov Software Foundation ❤●°•.
-
-# Changelog
-* 1.1:
-  * Remove logging of extra error messages
-  * Сhange timeout for errors from 15 to 5 seconds
-  * Fix and cut some loops
-  * Shorten some code
-
-* 1.0:
-  * Initial version
