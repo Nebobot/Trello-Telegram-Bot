@@ -45,12 +45,13 @@ Writing Issue and Pull Requests is possible in these languages: English, Ukraini
 # Install
 Clone the repository to your local disk
 ```shell
-git clone https://github.com/Nebobot/Trello-Telegram-Bot
-```
+git clone https://github.com/Nebobot/Trello-Telegram-Bot  
+cd Trello-Telegram-Bot
+``` 
 ## Install modules
 #### Also please note, Python 3.9 or newer is required.
 ```shell
-pip3 install pprint colorama requests
+pip3 install -r requirements.txt
 ```
 ### [!!] Then change configuration files, refer to section [# Configuration](https://github.com/Nebobot/Trello-Telegram-Bot/#configuration)
 
